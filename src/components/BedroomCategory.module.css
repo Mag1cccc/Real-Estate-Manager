@@ -1,0 +1,49 @@
+.bedroomCategory {
+  width: 250px;
+  height: 35px;
+  padding: 8px 14px;
+  border-radius: 10px;
+  background-color: #f3f3f3;
+  color: #021526;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 19.2px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.bedroomContainer {
+  border: 1px solid #dbdbdb;
+  border-radius: 5px;
+  background-color: #fff;
+  width: 282px;
+  padding: 16px;
+  margin-top: 15px;
+  position: absolute;
+}
+
+.h1 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #021526;
+  margin: 10px 0;
+}
+
+.input {
+  margin-top: 15px;
+  width: 42px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #808a93;
+  text-align: center;
+  outline: none;
+}
+
+.selectButtonContainer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
+}

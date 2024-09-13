@@ -5,6 +5,7 @@ export const Header = () => {
   return (
     <header className={styles.header}>
       <img src={redberryLogo} alt="redberry logo" />
+      <hr className={styles.line} />
     </header>
   );
 };
