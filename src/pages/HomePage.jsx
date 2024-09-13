@@ -8,12 +8,14 @@ import { Area } from "../components/Area";
 import { BedroomCategory } from "../components/BedroomCategory";
 import { AddListing } from "../components/AddListing";
 import { AddAgent } from "../components/AddAgent";
+import { Modal } from "../components/Modal";
 
 export const HomePage = () => {
   const [selectedRegion, setSelectedRegion] = useState("");
   const [priceRange, setPriceRange] = useState({ minPrice: "", maxPrice: "" });
   const [areaRange, setAreaRange] = useState({ minArea: "", maxArea: "" });
   const [selectedBedroomRange, setSelectedBedroomRange] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleRegionSelect = (region) => {
     setSelectedRegion(region);
@@ -34,6 +36,20 @@ export const HomePage = () => {
     setSelectedBedroomRange(bedroomRange);
     console.log("Selected Bedroom Count:", bedroomRange, selectedBedroomRange);
   };
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleAddAgent = (agentData) => {
+    console.log("Agent added:", agentData); // Handle the agent addition
+    handleCloseModal(); // Close modal after adding agent
+  };
+
   return (
     <main className={styles.homepage}>
       <Header />
@@ -45,8 +61,13 @@ export const HomePage = () => {
 
         <div className={styles.rightDiv}>
           <AddListing />
-          <AddAgent />
+          <AddAgent onClick={handleOpenModal} />
         </div>
+        <Modal
+          isOpen={isModalOpen}
+          onClose={handleCloseModal}
+          onAddAgent={handleAddAgent}
+        />
       </main>
     </main>
   );
