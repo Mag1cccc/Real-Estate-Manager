@@ -1,5 +1,9 @@
 import styles from "../components/AddAgent.module.css";
 
-export const AddAgent = () => {
-  return <button className={styles.button}>+ აგენტის დამატება</button>;
+export const AddAgent = ({ onClick }) => {
+  return (
+    <button className={styles.button} onClick={onClick}>
+      + აგენტის დამატება
+    </button>
+  );
 };
