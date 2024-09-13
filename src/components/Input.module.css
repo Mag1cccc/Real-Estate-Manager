@@ -1,0 +1,100 @@
+.inputContainer {
+  margin-bottom: 1rem;
+}
+
+.label {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 16.8px;
+  color: #021526;
+  margin-bottom: 6px;
+}
+
+.textInput,
+.emailInput,
+.phoneInput {
+  width: 384px;
+  height: 42px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #808a93;
+  color: #021526;
+}
+
+.textInput.invalid {
+  border-color: red; /* Border color for invalid input */
+}
+
+.validationMessage {
+  font-size: 0.875rem;
+  color: #021526; /* Default color for the validation message */
+  margin-top: 0.25rem;
+}
+
+.validationMessage.validMessage {
+  color: green; /* Color for valid message */
+}
+
+.validationMessage.invalidMessage {
+  color: red; /* Color for invalid message */
+}
+
+.emailInput.invalid {
+  border-color: red; /* Border color when invalid */
+}
+
+.emailInput.valid {
+  border-color: green; /* Border color when valid */
+}
+
+.phoneInput.invalid {
+  border-color: red; /* Border color when invalid */
+}
+
+.phoneInput.valid {
+  border-color: green; /* Border color when valid */
+}
+
+.parentDiv {
+  display: flex;
+  flex-direction: column;
+}
+
+.fileUploadWrapper {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  width: 799px;
+  height: 120px;
+  border-radius: 8px;
+  border: 1px dashed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fileInput {
+  display: none;
+}
+
+.fileIcon {
+  background-image: url("../assets/plus-circle.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 24px;
+  height: 24px;
+}
+
+.fileUpload.invalid {
+  border-color: red; /* Border color when invalid */
+}
+
+.fileUploadWrapper.invalid {
+  border-color: red; /* Border color when invalid */
+}
+
+.fileUploadWrapper.valid {
+  border-color: green; /* Border color when valid */
+}
