@@ -63,11 +63,13 @@ export const HomePage = () => {
           <AddListing />
           <AddAgent onClick={handleOpenModal} />
         </div>
-        <Modal
-          isOpen={isModalOpen}
-          onClose={handleCloseModal}
-          onAddAgent={handleAddAgent}
-        />
+        {isModalOpen && (
+          <Modal
+            isOpen={isModalOpen}
+            onClose={handleCloseModal}
+            onAddAgent={handleAddAgent}
+          />
+        )}
       </main>
     </main>
   );
