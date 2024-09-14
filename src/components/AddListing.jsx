@@ -1,5 +1,16 @@
-import styles from "../components/AddListing.module.css";
+import { useNavigate } from "react-router-dom";
+import styles from "./AddListing.module.css";
 
 export const AddListing = () => {
-  return <button className={styles.button}> + ლისტინგის დამატება </button>;
+  const navigate = useNavigate();
+
+  const handleAddListingClick = () => {
+    navigate("/add-listing");
+  };
+
+  return (
+    <button className={styles.button} onClick={handleAddListingClick}>
+      + ლისტინგის დამატება
+    </button>
+  );
 };
