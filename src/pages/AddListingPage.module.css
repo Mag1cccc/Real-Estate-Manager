@@ -1,0 +1,19 @@
+.addListingPage {
+  padding: 50px 100px;
+}
+
+.title {
+  color: #021526;
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 38.4px;
+  text-align: center;
+}
+
+.form {
+  margin: 0 auto;
+  margin-top: 80px;
+  width: 790px;
+  border: 1px solid red;
+  padding: 20px 0;
+}
