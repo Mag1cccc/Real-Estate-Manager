@@ -7,15 +7,27 @@ import { FileUpload } from "./FileUpload";
 import { SubmitButton } from "./SubmitButton";
 import { CancelButton } from "./CancelButton";
 import { useAddAgent } from "../hooks/useAddAgent";
+import { usePersistedForm } from "../hooks/usePersistedForm";
 
 export const Modal = ({ onClose, onAddAgent }) => {
-  const [formData, setFormData] = useState({
-    name: "",
-    surname: "",
-    email: "",
-    phone: "",
-    avatar: null,
-  });
+  // const [formData, setFormData] = useState({
+  //   name: "",
+  //   surname: "",
+  //   email: "",
+  //   phone: "",
+  //   avatar: null,
+  // });
+
+  const [formData, setFormData, clearFormData] = usePersistedForm(
+    "agentFormData",
+    {
+      name: "",
+      surname: "",
+      email: "",
+      phone: "",
+      avatar: null,
+    }
+  );
 
   const [isSubmitDisabled, setIsSubmitDisabled] = useState(true);
   const mutation = useAddAgent();
@@ -54,6 +66,7 @@ export const Modal = ({ onClose, onAddAgent }) => {
       onSuccess: (agentData) => {
         console.log("Agent added successfully:", agentData);
         onAddAgent(agentData);
+        clearFormData();
         onClose();
       },
       onError: (error) => {
@@ -115,7 +128,12 @@ export const Modal = ({ onClose, onAddAgent }) => {
           </div>
 
           <div className={styles.buttonContainer}>
-            <CancelButton onClick={onClose} />
+            <CancelButton
+              onClick={() => {
+                onClose();
+                clearFormData();
+              }}
+            />
             <SubmitButton
               onSubmit={handleSubmit}
               disabled={isSubmitDisabled || mutation.isLoading}

@@ -1,0 +1,29 @@
+.container {
+  margin-bottom: 16px;
+}
+
+.label {
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #1a1a1f;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 19.54px;
+}
+
+.inputs {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.8px;
+  color: #021526;
+}
+
+.radioGroup {
+  display: flex;
+  gap: 16px;
+}
+
+.radioGroup label {
+  display: flex;
+  align-items: center;
+}
