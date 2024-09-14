@@ -1,18 +1,35 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./Modal.module.css";
 import { TextInput } from "./TextInput";
 import { EmailInput } from "./EmailInput";
 import { PhoneInput } from "./PhoneInput";
 import { FileUpload } from "./FileUpload";
+import { SubmitButton } from "./SubmitButton";
+import { CancelButton } from "./CancelButton";
+import { useAddAgent } from "../hooks/useAddAgent";
 
-export const Modal = ({ onClose }) => {
+export const Modal = ({ onClose, onAddAgent }) => {
   const [formData, setFormData] = useState({
     name: "",
     surname: "",
     email: "",
-    phoneNumber: "",
-    photo: null,
+    phone: "",
+    avatar: null,
   });
+
+  const [isSubmitDisabled, setIsSubmitDisabled] = useState(true);
+  const mutation = useAddAgent();
+
+  useEffect(() => {
+    const isValid =
+      formData.name.length >= 2 &&
+      formData.surname.length >= 2 &&
+      /^[a-zA-Z0-9._%+-]+@redberry\.ge$/.test(formData.email) &&
+      /^5\d{8}$/.test(formData.phone) &&
+      formData.avatar;
+
+    setIsSubmitDisabled(!isValid);
+  }, [formData]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -20,12 +37,29 @@ export const Modal = ({ onClose }) => {
   };
 
   const handleFileChange = (e) => {
-    setFormData({ ...formData, photo: e.target.files[0] });
+    setFormData({ ...formData, avatar: e.target.files[0] });
   };
 
   const handleSubmit = () => {
-    console.log("Form Data:", formData);
-    onClose();
+    const data = new FormData();
+    data.append("name", formData.name);
+    data.append("surname", formData.surname);
+    data.append("email", formData.email);
+    data.append("phone", formData.phone);
+    if (formData.avatar) {
+      data.append("avatar", formData.avatar);
+    }
+
+    mutation.mutate(data, {
+      onSuccess: (agentData) => {
+        console.log("Agent added successfully:", agentData);
+        onAddAgent(agentData);
+        onClose();
+      },
+      onError: (error) => {
+        console.error("Error submitting form:", error);
+      },
+    });
   };
 
   return (
@@ -64,9 +98,9 @@ export const Modal = ({ onClose }) => {
 
             <PhoneInput
               label="ტელეფონის ნომერი"
-              value={formData.phoneNumber}
+              value={formData.phone}
               onChange={handleInputChange}
-              name="phoneNumber"
+              name="phone"
               required
               pattern="^5\d{8}$"
             />
@@ -81,22 +115,16 @@ export const Modal = ({ onClose }) => {
           </div>
 
           <div className={styles.buttonContainer}>
-            <button
-              type="button"
-              className={styles.cancelButton}
-              onClick={onClose}
-            >
-              გაუქმება
-            </button>
-            <button
-              type="button"
-              className={styles.addButton}
-              onClick={handleSubmit}
-            >
-              აგენტის დამატება
-            </button>
+            <CancelButton onClick={onClose} />
+            <SubmitButton
+              onSubmit={handleSubmit}
+              disabled={isSubmitDisabled || mutation.isLoading}
+            />
           </div>
         </form>
+        {mutation.error && (
+          <p className={styles.error}>Error: {mutation.error.message}</p>
+        )}
       </div>
     </div>
   );
