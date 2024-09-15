@@ -1,7 +1,8 @@
 .container {
   margin-bottom: 16px;
   display: flex;
-  gap: 14px;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .label {
@@ -39,4 +40,9 @@
 
 .errorInput {
   border: 1px solid #dc3545; /* Red border for errors */
+}
+
+.inputContainer {
+  display: flex;
+  gap: 14px;
 }
