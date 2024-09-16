@@ -1,0 +1,163 @@
+/* .container {
+  margin-top: 70px;
+}
+
+.dropdownWrapper {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #021526;
+  display: block;
+  margin: 10px 0;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 16.8px;
+  color: #021526;
+  display: block;
+}
+
+.dropdown {
+  width: 384px;
+  height: 42px;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #808a93;
+  border-radius: 6px;
+  margin-top: 6px;
+  padding-right: 32px;
+}
+
+.dropdown::after {
+  content: "";
+  position: absolute;
+  right: 8px; 
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  background-image: url("../assets/plus-circle.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  pointer-events: none; 
+}
+
+
+.errorInput {
+  border-color: red;
+}
+
+.errorText {
+  color: red;
+  font-size: 14px;
+} */
+
+/* AgentDropdown.module.css */
+
+/* AgentDropdown.module.css */
+.container {
+  margin-top: 70px;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 19.54px;
+  color: #021526;
+  margin-bottom: 10px;
+}
+
+.dropdownWrapper {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #021526;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.dropdownContainer {
+  position: relative;
+  width: 384px;
+}
+
+.selectedValue {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #808a93;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  background: #fff;
+  justify-content: space-between;
+}
+
+.selectedText {
+  flex: 1;
+}
+
+.addAgentIcon {
+  width: 24px;
+  height: 24px;
+  margin-left: 8px;
+}
+
+.addIcon {
+  width: 24px;
+  height: 24px;
+  margin-left: 8px;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  border: 1px solid #808a93;
+  border-radius: 6px;
+  background: #fff;
+  z-index: 10;
+  max-height: 300px; /* Add max-height for scrollable dropdown */
+  overflow-y: auto;
+}
+
+.dropdownItem {
+  padding: 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.dropdownItem:hover {
+  background-color: #e0e0e0;
+}
+
+.errorText {
+  color: red;
+  font-size: 14px;
+}
+
+.errorLabel {
+  color: red; /* Error text color for the label */
+}
+
+.errorDropdown {
+  border-color: red; /* Border color for the dropdown when there's an error */
+}
+
+.requiredText {
+  color: red; /* Red text color for the required message */
+  font-size: 12px;
+  margin-top: 5px;
+}
