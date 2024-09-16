@@ -19,7 +19,7 @@ export const Description = ({ description, onDescriptionChange }) => {
   return (
     <div className={styles.container}>
       <label htmlFor="description" className={styles.label}>
-        აღწერა
+        აღწერა*
       </label>
       <textarea
         id="description"
