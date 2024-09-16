@@ -11,7 +11,6 @@ export const usePersistedForm = (key, initialData) => {
     }
   });
 
-  // Sync the form data with localStorage whenever it changes
   useEffect(() => {
     try {
       localStorage.setItem(key, JSON.stringify(formData));
@@ -20,7 +19,6 @@ export const usePersistedForm = (key, initialData) => {
     }
   }, [key, formData]);
 
-  // Optional: You can add a clear function if needed
   const clearFormData = () => {
     try {
       localStorage.removeItem(key);
