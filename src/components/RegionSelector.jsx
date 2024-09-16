@@ -25,11 +25,11 @@ export const RegionSelector = ({ onSelectRegion }) => {
 
   const handleRegionClick = (region) => {
     const updatedSelectedRegions = selectedRegions.includes(region)
-      ? selectedRegions.filter((r) => r !== region) // Remove if already selected
-      : [...selectedRegions, region]; // Add if not selected
+      ? selectedRegions.filter((r) => r !== region)
+      : [...selectedRegions, region];
 
     setSelectedRegions(updatedSelectedRegions);
-    onSelectRegion(updatedSelectedRegions); // Pass selected regions to parent
+    onSelectRegion(updatedSelectedRegions);
   };
 
   return (

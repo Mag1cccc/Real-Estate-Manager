@@ -1,0 +1,36 @@
+.label {
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 16.8px;
+  color: #021526;
+  display: block;
+  margin: 8px 0px 5px 0;
+}
+
+.input {
+  width: 384px;
+  height: 42px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #808a93;
+}
+
+.errorInput {
+  border: 1px solid red;
+}
+
+.helperText {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.8px;
+  color: #021526;
+  margin-top: 4px;
+}
+
+.errorText {
+  color: red;
+}
+
+.validText {
+  color: green;
+}
