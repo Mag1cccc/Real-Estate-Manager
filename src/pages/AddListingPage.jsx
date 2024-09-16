@@ -4,14 +4,36 @@ import { useState } from "react";
 import ForSaleRent from "../components/ForSaleRent";
 import { Location } from "../components/Location";
 import { ApartmentDetails } from "../components/ApartmentDetails ";
+import { ImageUpload } from "../components/ImageUpload";
+import { AgentDropdown } from "../components/AgentDropdown";
+import { CancelButton } from "../components/CancelButton";
+import { SubmitButton } from "../components/SubmitButton";
+import { useNavigate } from "react-router-dom";
+import { SubmitListingButton } from "../components/SubmitListingButton";
 
 export const AddListingPage = () => {
+  const navigate = useNavigate();
+
   const [forSaleRent, setForSaleRent] = useState("");
   const [address, setAddress] = useState("");
   const [postalCode, setPostalCode] = useState("");
+  const [image, setImage] = useState(null);
 
   const handleForSaleRentChange = (event) => {
     setForSaleRent(event.target.value);
+  };
+
+  const handleAgentSelect = (agent) => {
+    setSelectedAgent(agent);
+    setFormErrors((prevErrors) => ({ ...prevErrors, agent: false }));
+  };
+
+  const handleCancel = () => {
+    navigate("/");
+  };
+
+  const handleSubmit = () => {
+    alert("!");
   };
 
   return (
@@ -27,6 +49,12 @@ export const AddListingPage = () => {
           onPostalCodeChange={setPostalCode}
         />
         <ApartmentDetails />
+        <ImageUpload onImageChange={setImage} />
+        <AgentDropdown onAgentSelect={handleAgentSelect} />
+        <div className={styles.buttonsContainer}>
+          <CancelButton onClick={handleCancel} />
+          <SubmitListingButton onClick={handleSubmit} />
+        </div>
       </form>
     </main>
   );
