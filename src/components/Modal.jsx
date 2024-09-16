@@ -10,14 +10,6 @@ import { useAddAgent } from "../hooks/useAddAgent";
 import { usePersistedForm } from "../hooks/usePersistedForm";
 
 export const Modal = ({ onClose, onAddAgent }) => {
-  // const [formData, setFormData] = useState({
-  //   name: "",
-  //   surname: "",
-  //   email: "",
-  //   phone: "",
-  //   avatar: null,
-  // });
-
   const [formData, setFormData, clearFormData] = usePersistedForm(
     "agentFormData",
     {
