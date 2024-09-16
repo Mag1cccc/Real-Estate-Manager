@@ -1,0 +1,83 @@
+.label {
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 16.8px;
+  color: #021526;
+  display: block;
+  margin: 24px 0px 5px 0;
+}
+
+.fileUploadWrapper {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  width: 788px;
+  height: 120px;
+  border-radius: 8px;
+  border: 1px dashed #2d3648;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fileInput {
+}
+
+.fileIcon {
+  background-image: url("../assets/plus-circle.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 24px;
+  height: 24px;
+}
+
+.input {
+  display: none;
+}
+
+.helperText {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.8px;
+  margin-top: 4px;
+  color: #021526;
+}
+
+.errorInput {
+  border: 1px solid red;
+}
+
+.errorText {
+  color: red;
+}
+
+.validText {
+  color: green;
+}
+
+.imagePreview {
+  width: 92px;
+  height: 82px;
+  border-radius: 4px;
+}
+
+.deleteIcon {
+  position: absolute;
+  bottom: 14px;
+  right: 43%;
+  width: 24px;
+  height: 24px;
+  background-image: url("../assets/delete-icon.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+
+.successText {
+  color: green;
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 4px;
+}
