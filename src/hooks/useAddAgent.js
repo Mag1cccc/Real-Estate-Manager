@@ -9,7 +9,7 @@ export const useAddAgent = () => {
         formData,
         {
           headers: {
-            Authorization: "Bearer 9d01b5b6-9107-4551-87ae-127927ac31b3",
+            Authorization: "Bearer 9d065d29-08fb-4362-9a6a-735c85c68faa",
             "Content-Type": "multipart/form-data",
           },
         }
