@@ -30,7 +30,7 @@ export const Area = ({ onSelectAreaRange }) => {
 
   const handleSelectButtonClick = () => {
     onSelectAreaRange({ minArea, maxArea });
-    setIsOpen(false); // Close the list after selection
+    setIsOpen(false);
   };
 
   return (
