@@ -10,7 +10,7 @@ export const FileUpload = ({ label, onChange, required, allowedFormats }) => {
 
   const handleClick = () => {
     if (fileInputRef.current) {
-      fileInputRef.current.click(); // Trigger file input click
+      fileInputRef.current.click();
     }
   };
 

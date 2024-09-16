@@ -64,8 +64,8 @@ export const Location = ({
   const handleRegionChange = (event) => {
     const regionId = event.target.value;
     setSelectedRegion(regionId);
-    setSelectedRegionId(regionId); // Update selectedRegionId
-    setSelectedCity(""); // Clear city selection when region changes
+    setSelectedRegionId(regionId);
+    setSelectedCity("");
   };
 
   const handleCityChange = (event) => {
@@ -89,6 +89,7 @@ export const Location = ({
     return <div>Error fetching cities: {citiesError.message}</div>;
   return (
     <div className={styles.container}>
+      <h4>მდებარეობა</h4>
       <div className={styles.inputContainer}>
         <div>
           <label htmlFor="address" className={styles.label}>

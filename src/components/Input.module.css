@@ -23,37 +23,37 @@
 }
 
 .textInput.invalid {
-  border-color: red; /* Border color for invalid input */
+  border-color: red;
 }
 
 .validationMessage {
   font-size: 0.875rem;
-  color: #021526; /* Default color for the validation message */
+  color: #021526;
   margin-top: 0.25rem;
 }
 
 .validationMessage.validMessage {
-  color: green; /* Color for valid message */
+  color: green;
 }
 
 .validationMessage.invalidMessage {
-  color: red; /* Color for invalid message */
+  color: red;
 }
 
 .emailInput.invalid {
-  border-color: red; /* Border color when invalid */
+  border-color: red;
 }
 
 .emailInput.valid {
-  border-color: green; /* Border color when valid */
+  border-color: green;
 }
 
 .phoneInput.invalid {
-  border-color: red; /* Border color when invalid */
+  border-color: red;
 }
 
 .phoneInput.valid {
-  border-color: green; /* Border color when valid */
+  border-color: green;
 }
 
 .parentDiv {

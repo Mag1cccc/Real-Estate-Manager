@@ -16,7 +16,7 @@ export const CitySelect = ({
         id="city"
         value={selectedCity}
         onChange={onCityChange}
-        disabled={!regionId} // Disable if no region is selected
+        disabled={!regionId}
         className={styles.select}
       >
         <option value="">აირჩიეთ ქალაქი</option>
