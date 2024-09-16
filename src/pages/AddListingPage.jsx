@@ -3,6 +3,7 @@ import { Header } from "../components/Header";
 import { useState } from "react";
 import ForSaleRent from "../components/ForSaleRent";
 import { Location } from "../components/Location";
+import { ApartmentDetails } from "../components/ApartmentDetails ";
 
 export const AddListingPage = () => {
   const [forSaleRent, setForSaleRent] = useState("");
@@ -25,6 +26,7 @@ export const AddListingPage = () => {
           postalCode={postalCode}
           onPostalCodeChange={setPostalCode}
         />
+        <ApartmentDetails />
       </form>
     </main>
   );

@@ -46,8 +46,8 @@ export const HomePage = () => {
   };
 
   const handleAddAgent = (agentData) => {
-    console.log("Agent added:", agentData); // Handle the agent addition
-    handleCloseModal(); // Close modal after adding agent
+    console.log("Agent added:", agentData);
+    handleCloseModal();
   };
 
   return (
