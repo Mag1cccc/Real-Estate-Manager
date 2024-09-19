@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useAgents } from "../hooks/useAgents";
 import styles from "./AgentDropdown.module.css";
 import plusCircleIcon from "../assets/plus-circle.svg";
-import addIcon from "../assets/Icon.svg"; // Adjust the path as needed
+import addIcon from "../assets/Icon.svg";
 
 export const AgentDropdown = ({ onAgentSelect }) => {
   const [selectedAgent, setSelectedAgent] = useState(null);
@@ -37,11 +37,11 @@ export const AgentDropdown = ({ onAgentSelect }) => {
                   ? `${selectedAgent.name} ${selectedAgent.surname}`
                   : "დაამატე აგენტი"}
               </span>
-              {/* Show add icon when an agent is selected */}
+
               {selectedAgent && (
                 <img src={addIcon} alt="Add Icon" className={styles.addIcon} />
               )}
-              {/* Show plus circle icon when no agent is selected */}
+
               {!selectedAgent && (
                 <img
                   src={plusCircleIcon}
