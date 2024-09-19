@@ -4,7 +4,7 @@ import styles from "./ImageUpload.module.css";
 export const ImageUpload = ({ onImageChange }) => {
   const [imageError, setImageError] = useState("");
   const [imagePreview, setImagePreview] = useState(null);
-  const [imageSuccess, setImageSuccess] = useState(""); // New state for success message
+  const [imageSuccess, setImageSuccess] = useState("");
 
   const fileInputRef = useRef(null);
 
@@ -14,7 +14,7 @@ export const ImageUpload = ({ onImageChange }) => {
     if (!file) {
       setImageError("✓ სურათი აუცილებელია");
       setImagePreview(null);
-      setImageSuccess(""); // Clear success message if there's no file
+      setImageSuccess("");
       return;
     }
 
@@ -29,21 +29,20 @@ export const ImageUpload = ({ onImageChange }) => {
         "✓ დასაშვებია მხოლოდ გამოსახულების ფაილები (JPEG, PNG, GIF, WEBP)."
       );
       setImagePreview(null);
-      setImageSuccess(""); // Clear success message if there's an error
+      setImageSuccess("");
       return;
     }
 
-    const maxFileSize = 1 * 1024 * 1024; // 1MB
+    const maxFileSize = 1 * 1024 * 1024;
     if (file.size > maxFileSize) {
       setImageError("✓ ფაილის ზომა არ უნდა აღემატებოდეს 1 მბ");
       setImagePreview(null);
-      setImageSuccess(""); // Clear success message if there's an error
+      setImageSuccess("");
       return;
     }
 
-    // Clear error and set success message
     setImageError("");
-    setImageSuccess("✓ სურათი წარმატებით აიტვირთა"); // Set success message
+    setImageSuccess("✓ სურათი წარმატებით აიტვირთა");
 
     const reader = new FileReader();
     reader.onloadend = () => {
@@ -62,7 +61,7 @@ export const ImageUpload = ({ onImageChange }) => {
     setImagePreview(null);
     fileInputRef.current.value = "";
     setImageError("✓ სურათი აუცილებელია");
-    setImageSuccess(""); // Clear success message on delete
+    setImageSuccess("");
     onImageChange(null);
   };
 
@@ -99,7 +98,6 @@ export const ImageUpload = ({ onImageChange }) => {
         )}
       </div>
 
-      {/* Error message */}
       <p
         className={`${styles.helperText} ${
           imageError ? styles.errorText : styles.validText
@@ -108,10 +106,7 @@ export const ImageUpload = ({ onImageChange }) => {
         {imageError || ""}
       </p>
 
-      {/* Success message */}
-      {imageSuccess && (
-        <p className={styles.successText}>{imageSuccess}</p> // Show success message in green
-      )}
+      {imageSuccess && <p className={styles.successText}>{imageSuccess}</p>}
     </>
   );
 };

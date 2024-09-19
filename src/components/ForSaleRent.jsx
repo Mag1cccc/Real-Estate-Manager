@@ -1,6 +1,9 @@
 import styles from "./ForSaleRent.module.css";
 
 const ForSaleRent = ({ value, onChange }) => {
+  const handleChange = (event) => {
+    onChange(event.target.value);
+  };
   return (
     <div className={styles.container}>
       <label className={styles.label}>გარიგების ტიპი</label>
@@ -12,7 +15,7 @@ const ForSaleRent = ({ value, onChange }) => {
             name="forSaleRent"
             value="forSale"
             checked={value === "forSale"}
-            onChange={onChange}
+            onChange={handleChange}
             required
           />
           იყიდება
@@ -24,7 +27,7 @@ const ForSaleRent = ({ value, onChange }) => {
             name="forSaleRent"
             value="forRent"
             checked={value === "forRent"}
-            onChange={onChange}
+            onChange={handleChange}
             required
           />
           ქირავდება
