@@ -1,27 +1,25 @@
-import axios from "axios";
 import { useMutation } from "@tanstack/react-query";
-
-const API_URL =
-  "https://api.real-estate-manager.redberryinternship.ge/api/real-estates";
+import axios from "axios";
 
 export const useAddListing = () => {
-  return useMutation(
-    async (formData) => {
-      const response = await axios.post(`${API_URL}/add-listing`, formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-          Authorization: `Bearer 9d065d29-08fb-4362-9a6a-735c85c68faa`,
-        },
-      });
+  const mutation = useMutation({
+    mutationFn: async (formData) => {
+      const response = await axios.post(
+        "https://api.real-estate-manager.redberryinternship.ge/api/real-estates",
+        formData,
+        {
+          headers: {
+            Authorization: "Bearer 9d065d29-08fb-4362-9a6a-735c85c68faa",
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
       return response.data;
     },
-    {
-      onError: (error) => {
-        console.error("Error adding listing:", error);
-      },
-      onSuccess: (data) => {
-        console.log("Listing added successfully:", data);
-      },
-    }
-  );
+    onError: (error) => {
+      console.error("Error adding agent:", error);
+    },
+  });
+
+  return mutation;
 };

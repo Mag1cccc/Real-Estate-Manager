@@ -17,7 +17,7 @@ const fetchAgents = async () => {
 
 export const useAgents = () => {
   return useQuery({
-    queryKey: ["agents"], // Updated from string to array
+    queryKey: ["agents"],
     queryFn: fetchAgents,
     staleTime: 5 * 60 * 1000,
     retry: 1,
