@@ -9,6 +9,8 @@ import { BedroomCategory } from "../components/BedroomCategory";
 import { AddListing } from "../components/AddListing";
 import { AddAgent } from "../components/AddAgent";
 import { Modal } from "../components/Modal";
+import { useAgents } from "../hooks/useListing";
+import { ApartmentCard } from "../components/ApartmentCard";
 
 export const HomePage = () => {
   const [selectedRegion, setSelectedRegion] = useState("");
@@ -16,6 +18,8 @@ export const HomePage = () => {
   const [areaRange, setAreaRange] = useState({ minArea: "", maxArea: "" });
   const [selectedBedroomRange, setSelectedBedroomRange] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const { data: apartments, error, isLoading } = useAgents();
 
   const handleRegionSelect = (region) => {
     setSelectedRegion(region);
@@ -53,16 +57,25 @@ export const HomePage = () => {
   return (
     <main className={styles.homepage}>
       <Header />
-      <main className={styles.main}>
-        <RegionSelector onSelectRegion={handleRegionSelect} />
-        <PriceCategory onSelectPriceRange={handlePriceRangeSelect} />
-        <Area onSelectAreaRange={handleAreaRangeSelect} />
-        <BedroomCategory onSelectBedroomRange={handleBedroomSelect} />
+      <main>
+        <div className={styles.main}>
+          <RegionSelector onSelectRegion={handleRegionSelect} />
+          <PriceCategory onSelectPriceRange={handlePriceRangeSelect} />
+          <Area onSelectAreaRange={handleAreaRangeSelect} />
+          <BedroomCategory onSelectBedroomRange={handleBedroomSelect} />
 
-        <div className={styles.rightDiv}>
-          <AddListing />
-          <AddAgent onClick={handleOpenModal} />
+          <div className={styles.rightDiv}>
+            <AddListing />
+            <AddAgent onClick={handleOpenModal} />
+          </div>
         </div>
+
+        <div className={styles.cardContainer}>
+          {apartments?.map((apartment) => (
+            <ApartmentCard key={apartment.id} apartment={apartment} />
+          ))}
+        </div>
+
         {isModalOpen && (
           <Modal
             isOpen={isModalOpen}

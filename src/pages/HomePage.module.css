@@ -1,15 +1,24 @@
 .homepage {
-  padding: 70px 100px;
+  padding: 60px 100px;
 }
 
 .main {
   display: flex;
-  gap: 10px;
   align-items: center;
+  gap: 12px;
 }
 
 .rightDiv {
-  margin-left: 13%;
+  margin-left: 12%;
   display: flex;
   gap: 8px;
+}
+
+.cardContainer {
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
 }
