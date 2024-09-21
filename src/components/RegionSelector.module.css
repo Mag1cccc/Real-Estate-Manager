@@ -31,8 +31,9 @@
   border: 1px solid #dbdbdb;
   border-radius: 10px;
   position: absolute;
-  left: 6.5%;
-  margin-top: 32px;
+  left: 11.8%;
+  z-index: 1;
+  top: 41.9%;
 }
 
 .listItem {
