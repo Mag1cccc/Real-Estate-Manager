@@ -4,7 +4,7 @@ import { Header } from "./Header";
 import styles from "./ApartmentDetails.module.css";
 import locationIcon from "../assets/location-marker.svg";
 import bedIcon from "../assets/bed.svg";
-import vectorIcon from "../assets/vector.svg";
+import vectorIcon from "../assets/Vector.svg";
 import zipVector from "../assets/zipvector.svg";
 import emailIcon from "../assets/email.svg";
 import phoneIcon from "../assets/phone.svg";
