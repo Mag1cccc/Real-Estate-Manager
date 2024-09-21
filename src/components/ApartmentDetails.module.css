@@ -1,0 +1,121 @@
+body {
+  padding: 60px 80px;
+}
+
+.parentContainer {
+  margin-top: 100px;
+  display: flex;
+  gap: 15px;
+}
+
+.status {
+  position: absolute;
+  width: 142px;
+  height: 41px;
+  padding: 6px;
+  background-color: rgba(2, 21, 38, 0.5);
+  border-radius: 20px;
+  color: rgba(255, 255, 255, 1);
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 24px;
+  letter-spacing: 0.04em;
+  text-align: center;
+  margin: 50px;
+}
+
+.img {
+  width: 839px;
+  height: 670px;
+}
+
+.childContainer {
+  margin-top: 40px;
+}
+
+.h1 {
+  font-size: 48px;
+  font-weight: bold;
+  line-height: 57.6px;
+  color: rgba(2, 21, 38, 1);
+}
+
+.h3 {
+  font-size: 24px;
+  color: rgba(128, 138, 147, 1);
+  line-height: 28.8px;
+  margin-left: 6px;
+  font-weight: 400;
+}
+
+.iconContainer {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.description {
+  margin: 20px 0 50px 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  color: rgba(128, 138, 147, 1);
+}
+
+.agentParentContainer {
+  width: 503px;
+  height: 174px;
+  border-radius: 8px;
+  border: 1px solid rgba(219, 219, 219, 1);
+  padding: 30px 20px;
+}
+
+.agentContainer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.h4 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.2px;
+  color: rgba(2, 21, 38, 1);
+}
+
+.h5 {
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.8px;
+  color: rgba(103, 110, 118, 1);
+}
+
+.contact {
+  margin-top: 10px;
+}
+
+.contactContainer {
+  display: flex;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.8px;
+  color: rgba(128, 138, 147, 1);
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.button {
+  width: 131px;
+  height: 34px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(103, 110, 118, 1);
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 14.4px;
+  text-align: center;
+  color: rgba(103, 110, 118, 1);
+  margin-top: 40px;
+  background-color: white;
+}

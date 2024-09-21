@@ -1,0 +1,64 @@
+.parentContainer {
+  margin: 0 0 12px 0;
+  border-radius: 14px;
+  box-shadow: 5px 5px 12px 0px rgba(2, 21, 38, 0.08);
+  border: 1px solid rgba(219, 219, 219, 1);
+}
+
+.image {
+  width: 100%;
+}
+
+.details {
+  padding: 16px;
+}
+
+.addressContainer {
+  display: flex;
+  align-items: center;
+}
+
+.address,
+.zipcode,
+.area,
+.bedrooms {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.2px;
+  color: #021526b2;
+  margin-left: 4px;
+}
+
+.price {
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 33.6px;
+  color: #021526;
+  margin-bottom: 8px;
+}
+
+.container {
+  margin-top: 26px;
+  display: flex;
+  gap: 25px;
+  margin-bottom: 18px;
+}
+
+.saleRent {
+  width: 90px;
+  height: 26px;
+  padding: 5px;
+  border-radius: 15px;
+  background-color: rgba(2, 21, 38, 0.5);
+  position: absolute;
+  margin: 28px 0 0 24px;
+}
+
+.type {
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 14.4px;
+  letter-spacing: 0.04em;
+  text-align: center;
+  color: rgba(255, 255, 255, 1);
+}
