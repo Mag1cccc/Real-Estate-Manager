@@ -30,7 +30,7 @@ export const PriceCategory = ({ onSelectPriceRange }) => {
 
   const handleSelectButtonClick = () => {
     onSelectPriceRange({ minPrice, maxPrice });
-    setIsOpen(false); // Close the list after selection
+    setIsOpen(false);
   };
 
   return (

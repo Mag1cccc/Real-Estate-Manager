@@ -69,7 +69,7 @@ export const RealEstateListings = ({ filters }) => {
             </li>
           ))
         ) : (
-          <p>No listings match the selected criteria.</p>
+          <p>არცერთი განცხადება არ შეესაბამება არჩეულ კრიტერიუმებს.</p>
         )}
       </ul>
     </div>
