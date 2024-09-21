@@ -4,7 +4,7 @@ import { Header } from "./Header";
 import styles from "./ApartmentDetails.module.css";
 import locationIcon from "../assets/location-marker.svg";
 import bedIcon from "../assets/bed.svg";
-import vector from "../assets/vector.svg";
+import vectorIcon from "../assets/vector.svg";
 import zipVector from "../assets/zipvector.svg";
 import emailIcon from "../assets/email.svg";
 import phoneIcon from "../assets/phone.svg";
@@ -75,7 +75,7 @@ export const ApartmentDetail = () => {
             </h3>
           </div>
           <div className={styles.iconContainer}>
-            <img src={vector} alt="vector icon" />
+            <img src={vectorIcon} alt="vector icon" />
             <h3 className={styles.h3}>{area} m²</h3>
           </div>
           <div className={styles.iconContainer}>
