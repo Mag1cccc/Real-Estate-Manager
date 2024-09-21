@@ -39,7 +39,7 @@ export const RegionSelector = ({ onSelectRegion }) => {
         <img src={Icon} alt="icon" />
       </div>
       {isOpen && (
-        <div>
+        <>
           <div className={styles.list}>
             <h1 className={styles.h1}>რეგიონის მიხედვით</h1>
             <div className={styles.listItem}>
@@ -58,7 +58,7 @@ export const RegionSelector = ({ onSelectRegion }) => {
               <SelectButton />
             </div>
           </div>
-        </div>
+        </>
       )}
     </>
   );
