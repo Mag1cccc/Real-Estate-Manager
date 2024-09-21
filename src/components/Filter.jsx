@@ -11,11 +11,11 @@ export const Filter = ({ onFilterChange }) => {
 
   const handleApplyFilters = () => {
     if (parseFloat(priceMin) > parseFloat(priceMax)) {
-      alert("Please enter valid numbers for price range.");
+      alert("გთხოვთ, შეიყვანოთ სწორი ნომრები");
       return;
     }
     if (parseFloat(areaMin) > parseFloat(areaMax)) {
-      alert("Please enter valid numbers for area range.");
+      alert("გთხოვთ, შეიყვანოთ სწორი ნომრები");
       return;
     }
 
